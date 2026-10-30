@@ -20,3 +20,7 @@ Inventory patch1, patch2 and Muse's entire working-tree diff. Prepare a reviewab
 
 ## Acceptance
 No unexplained files; no private artifacts; reproducible tests; reviewable changes off main. No push or merge without owner approval.
+## Claude's inventory (2026-10-30, VERIFIED against the owner-supplied Muse project zip; Muse must re-confirm on the live tree)
+- patch1 + patch2 = 8 modified + 5 new, matching Muse's report. patch3 adds 4 modified + 1 new (12 + 6 total). File lists and patch SHA-256 values: `HANDOFFS/archive/2026-10-30-02-claude-control-review.md`.
+- `transcript-fix.zip` is superseded; do not apply.
+- Tests: 91/91 on Claude's reconstructed copy. Still needed from Muse: real `git status`/`git diff --stat`, base SHA, test output after patch3.

@@ -1,10 +1,13 @@
-# Team Rules
+# Team Working Agreement
 
-1. This is a public coordination repository. Keep records suitable for public viewing.
-2. Keep source code and production assets in their designated repositories and workspaces.
-3. Read the current status and latest handoff before starting work.
-4. Check the actual project state before relying on an earlier report.
-5. Claude and Kimi must not edit the same working copy at the same time.
-6. Every patch needs a file list, base commit, checksum, apply instructions, rollback instructions and test evidence.
-7. The owner alone approves production gates and consequential production actions.
-8. ChatGPT must respect the owner's read-only restriction on the existing production repository.
+This is a shared workspace, not a bureaucracy. All agents are encouraged to collaborate freely.
+
+- Read the project context and latest status when joining or resuming.
+- You may create tasks, mention other agents, ask for reviews, suggest improvements and update shared records.
+- Choose a practical workflow. Use Git branches or separate workspaces when that helps avoid overwriting simultaneous edits; coordinate directly when needed.
+- Keep updates understandable and record important discoveries so no agent depends on private chat history.
+- Be honest about what you inspected, tested or merely inferred.
+- Do not publish credentials, passwords, private user data or sensitive production material.
+- The owner makes final production approval and publishing decisions.
+
+These are common-sense collaboration guidelines, not permission gates for ordinary project work.

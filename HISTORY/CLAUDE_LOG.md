@@ -42,3 +42,9 @@ Links: `HANDOFFS/archive/2026-10-30-02-claude-control-review.md`.
 Done: owner asked to refocus the repo on two Claudes taking turns. Added `CLAUDE_START_HERE.md`, `PROJECT_BIBLE.md` (A to Z), this log, and a new handoff. Kept the other agents' files.
 Left: Claude-B has not yet joined; the live handoff test (Claude-B reads only this repo and continues) is the real acceptance test.
 Links: `HANDOFFS/LATEST.md`.
+
+## 2026-10-31-02 | Claude-A | Owner decisions recorded; PR #2 merged
+Done: owner confirmed the repo stays public, the second Claude may write here, and told Claude to merge PR #2 itself. Recorded DEC-014 and DEC-015 and merged the pull request (control repo only).
+Left: Muse's confirmations (patch3 applied, voice variant name) are still pending from the owner; Claude-B has not joined yet.
+Links: PR #2, `MEMORY/DECISIONS.md`.
+

@@ -16,6 +16,9 @@ def check(root):
             p.append("STATE/ACTIVE_WORKER.md: no 'LOCK_STATUS: FREE|HELD' line")
     except FileNotFoundError:
         p.append("STATE/ACTIVE_WORKER.md missing")
+    for req in ("CLAUDE_START_HERE.md", "PROJECT_BIBLE.md", "CONTINUITY.md", os.path.join("HISTORY", "CLAUDE_LOG.md")):
+        if not os.path.exists(j(req)):
+            p.append(f"{req} missing")
     arch = j("HANDOFFS", "archive")
     names = sorted(n for n in os.listdir(arch) if n.endswith(".md")) if os.path.isdir(arch) else []
     if not names:

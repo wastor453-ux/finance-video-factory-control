@@ -1,6 +1,6 @@
 # CLAUDE-0001 — Review and correct the control center
 
-Assignee: Claude. Status: READY.
+Assignee: Claude. Status: DONE (documentation prepared on branch `claude/control-review-0001`; push pending access). Result: `HANDOFFS/LATEST.md`.
 
 Claude, you know Finance Video Factory and its history better than the other agents. Please review this repository and reconcile its introduction, project context, live status, current run, latest handoff and agent instructions with the actual production system and your recent work. Correct missing or stale information, clearly label what you verified versus recalled or heard from another agent, and explain the real architecture, skills, weekly workflow, Muse file exchange, current pending patches and next steps.
 

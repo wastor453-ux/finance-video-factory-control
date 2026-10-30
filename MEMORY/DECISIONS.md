@@ -12,3 +12,7 @@
 | DEC-008 | Comprehensive professional audit of production skills | PLANNED | After shared control system works; improve the machine, not only one script. |
 | DEC-009 | Motion-graphics reference workflow | PLANNED | Separate workstream for highlighted words, examples, layouts, charts, animation, transitions and pacing. |
 | DEC-010 | G2 approval for current run | PENDING_OWNER | Stage results reported verified; gate remains unapproved. |
+| DEC-011 | Transcript source is Gemini video-understanding; yt-dlp, youtube-transcript-api and Whisper-on-YouTube-audio removed | APPROVED (owner asked to remove failed steps) | Muse live test: YouTube blocked the IP (429 / bot check / IpBlocked); Gemini route returned the full transcript. Fallback: owner-approved hosted API (none configured), then manual paste. |
+| DEC-012 | Scripts must pass `ffx script-score` (80+, no P0) before G2 | PROPOSED by Claude, pending owner OK | Gate adapted from public humanizer skills; G2 script currently scores 29. |
+| DEC-013 | Handoffs are dated and append-only; second Claude account allowed as backup driver | PROPOSED by Claude, pending owner OK | See `CONTINUITY.md`. |
+

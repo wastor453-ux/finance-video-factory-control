@@ -19,3 +19,6 @@ Use the simplest workflow that fits. Branches and separate worktrees are useful 
 ## Production decisions
 
 The owner has final authority over production approvals and publishing. Agents should make progress on ordinary research, analysis, code review, documentation, tests and proposals without waiting for unnecessary permission. Never claim a render or upload was approved when it was not.
+
+## Continuity
+Stopping, taking over and resuming are governed by `CONTINUITY.md` (dated append-only handoffs, one driver per working copy, verified-vs-reported tags). `python3 tools/check_control.py` checks the structure.

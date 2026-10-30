@@ -1,6 +1,6 @@
 # CTL-0001 — Bootstrap and validate shared control center
 
-- Status: IN_PROGRESS
+- Status: WAITING_FOR_AGENT_ACCESS_TEST
 - Priority: P0
 - Owner: Project Owner
 - Coordinator: ChatGPT
@@ -10,16 +10,23 @@
 ## Objective
 Establish durable coordination for ChatGPT, Muse, Claude and Kimi across separate chats and workspaces.
 
-## Deliverables
+## Completed
 - [x] Owner created public GitHub repo.
-- [x] ChatGPT GitHub read/write access verified.
-- [x] Core team rules, project context, current run, handoff and decision files started.
-- [ ] Complete remaining starter docs.
-- [ ] Verify Muse, Claude and Kimi read/write paths separately.
-- [ ] Run text-only two-agent handoff test.
+- [x] ChatGPT GitHub read/write permissions verified.
+- [x] Core agent instructions, team charter/rules, project context and operating protocol committed.
+- [x] Live status, current run, active worker and latest handoff committed.
+- [x] Decision register and pending jobs for patch inventory, skill audit and motion-reference workflow committed.
+- [x] Muse, Claude Code and Kimi instruction files started.
+- [x] Separate Muse access-test job created.
+
+## Remaining
+- [ ] Muse verifies clone/read/push from the Secure VM using CTL-0002; do not touch the production project.
+- [ ] Confirm Claude and Kimi actual interfaces and write paths.
+- [ ] Complete a text-only two-agent round-trip receipt.
+- [ ] Close bootstrap after evidence is independently checked.
 
 ## Acceptance
-All agents can read current job/status. At least two agents complete a harmless text-only handoff. No changes to production code or active video assets. Public repo contains sanitized coordination only.
+At least two agents complete a harmless text-only handoff. All agents can read current status and latest handoff. No production code or active video assets are changed.
 
 ## Out of scope
-Topic selection, source-video originality policy, production voice config changes, production patch application, rendering and publishing.
+Topic selection, source-video originality policy, production voice config changes, applying Claude's pending production patches, rendering and publishing.

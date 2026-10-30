@@ -1,0 +1,3 @@
+# Claude Code Instructions
+
+Read `AGENTS.md` first, then `PROJECT_CONTEXT.md`, `TEAM_CHARTER.md`, `TEAM_RULES.md`, current state, latest handoff and your assigned job. This is a PUBLIC coordination repository; keep all commits suitable for public viewing. Do not modify `FINANCE_VIDEO_FACTORY` during bootstrap. Use separate branches/worktrees, provide tests and a handoff, and respect owner approvals.

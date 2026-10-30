@@ -1,16 +1,24 @@
 # Latest Handoff — 2026-10-30
 
-## Current position
-- Production repo: `FINANCE_VIDEO_FACTORY`, main SHA `382bda66e7b340aa33edaf31830519cf008948d5` (observed by ChatGPT; read-only for ChatGPT).
-- Muse reports Claude patch sets applied locally but not pushed; reported combined diff: 8 modified + 5 new files. Re-inventory before sync.
-- Muse reports 89/89 tests after patch2; not independently verified by ChatGPT.
-- Active run `2026-W44-marktilbury-hriu0irR` is at G2. G1 approved; transcript, analysis, script, fact-check and voice stages reported VERIFIED; G2 gate remains unapproved.
-- Owner prefers Koda `short` sample (“calm, authoritative, measured pace”). Production config still records `user`; synchronization pending.
-- Owner wants control system first. Topic selection and source-video originality policy discussions later.
-- A separate visual-reference workstream will study motion graphics, typography, highlighted words, examples, transitions and pacing.
+## Control-center bootstrap
+- Owner created this separate PUBLIC repository and explicitly chose to keep it public.
+- ChatGPT GitHub integration has admin/push/pull access.
+- Core team, project, operating, state, handoff, decision and task documents are committed on main.
+- Muse access test job is ready: `JOBS/PENDING/CTL-0002-muse-access-test.md`.
+- Muse, Claude and Kimi read/write access have not yet been tested.
+- The next action is for Muse to clone this control repo into a separate folder and push the harmless access receipt on branch `test/muse-control-access`. Do not touch the production repo.
 
-## Next actions
-1. Verify Muse, Claude and Kimi access paths to this public repo.
-2. Run a harmless text-only two-agent handoff.
-3. After integration, audit all reusable skills and QA gates.
-4. Do not touch the existing production repo as part of this bootstrap; do not start G3 before G2 approval; no render/upload without explicit approval.
+## Production state (reported by Muse)
+- Production repo `FINANCE_VIDEO_FACTORY` main was observed at `382bda66e7b340aa33edaf31830519cf008948d5`. ChatGPT is read-only there.
+- Muse reports Claude patch sets applied locally but not pushed; reported combined diff is 8 modified + 5 new files. Re-inventory before sync.
+- Muse reports 89/89 tests after patch2; ChatGPT did not independently run them in Muse.
+- Active run: `2026-W44-marktilbury-hriu0irR`. G1 approved; transcript, analysis, script, fact-check and voice stages reported VERIFIED; G2 gate is not approved.
+- Owner prefers Koda sample variant `short`: “calm, authoritative, measured pace”. Production config still records `user`; sync pending.
+
+## Deferred owner decisions
+- Topic selection and source-video originality policy: discuss later; no changes during bootstrap.
+- Comprehensive skill audit: after team access and a successful handoff.
+- Motion-graphics reference workflow: separate future workstream for typography, highlighted words, examples, charts, animation, transitions and pacing.
+
+## Safety
+Keep this public repo sanitized. Never commit credentials, private transcripts, raw private reports, private URLs or production media. Do not change production code during bootstrap. Do not start G3 before G2 approval. No render, upload or publishing without explicit owner approval.

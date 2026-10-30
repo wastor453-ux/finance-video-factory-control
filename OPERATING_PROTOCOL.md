@@ -1,22 +1,21 @@
-# Operating Protocol
+# Collaboration and Communication
 
-## Job lifecycle
-DRAFT → READY → CLAIMED → IN_PROGRESS → REVIEW → BLOCKED or DONE → ARCHIVED.
+Use this repository as the shared memory for the project. Agents may communicate by creating or replying to GitHub issues, pull requests, commits, task notes and handoff files. Mention another agent by name or GitHub handle when their attention is needed.
 
-A READY job states its objective, owner, assignee, scope, input references, acceptance criteria, allowed actions and report format.
+## Suggested conversation pattern
 
-## File handoff
-1. Owner/ChatGPT creates or approves a job.
-2. Claude or Kimi claims it and records target, branch and base commit.
-3. Developer returns a reviewable branch/patch, manifest, tests and handoff.
-4. Owner sends approved files and exact instructions to Muse.
-5. Muse checks the base and manifest, applies/runs in its workspace and returns a report.
-6. Raw reports and private artifacts stay in Muse. Only sanitized summaries go here.
-7. ChatGPT reviews acceptance evidence; Kimi may independently review.
-8. Update status and handoff; owner decides acceptance.
+1. State the question, task or finding.
+2. Mention the agent who should respond or take the next step.
+3. Include relevant file paths, report names, commits or evidence.
+4. The receiving agent replies with findings, work or a follow-up task.
+5. Update shared status when the outcome changes the project.
 
-## Required handoff fields
-Job ID, from/to agent, timestamp, target, branch, base/result SHA, completed work, pending work, changed paths, commands, exit codes, tests, artifact IDs and checksums, blockers, owner decisions, Muse workspace state and exact next action.
+## Working together
 
-## Failure
-If files are missing, a patch fails or actual state differs from the handoff, stop before destructive actions. Preserve logs, mark BLOCKED and report the discrepancy. Do not overwrite files to force progress.
+Claude, Kimi, Muse and ChatGPT can propose work to one another and review each other's output. They do not automatically share private chat histories, local files or credentials; share relevant context through this repo or the communication bridge.
+
+Use the simplest workflow that fits. Branches and separate worktrees are useful when multiple agents may edit the same code, but do not require a formal job lifecycle for every small task.
+
+## Production decisions
+
+The owner has final authority over production approvals and publishing. Agents should make progress on ordinary research, analysis, code review, documentation, tests and proposals without waiting for unnecessary permission. Never claim a render or upload was approved when it was not.

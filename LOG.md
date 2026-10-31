@@ -25,3 +25,8 @@ Left: Claude-B needs repo access in a session that can clone and push. Suggested
 ## 2026-10-31-03 | Claude-A | One-driver rule, checkpoints, knowledge check
 Done: owner clarified the model: one Claude works at a time and keeps the repo updated as it goes; the other resumes from the repo when the owner says the driver hit its limit. Recorded as D-12, rewrote the working model in `START_HERE.md`, set the lock to HELD by Claude-A with a live Checkpoint in `STATUS.md`, added `TESTS/KNOWLEDGE_CHECK.md`. Retracted the earlier suggestion that Claude-B start SKILL-0001 now: Claude-B stays idle.
 Left: Claude-B's knowledge-check answers (owner relays); grade them; Muse output for patch 3 and the script rewrite.
+
+## 2026-10-31-04 | Claude-A | Claude-B knowledge check blocked by access; BRIEFING.md added
+Done: Claude-B (chat-only, no repo tool) opened `KNOWLEDGE_CHECK.md` by raw link but could not read other files, did not answer the 12 questions, and still holds old uploads (`transcript-fix.zip`, the old starter kit) that could mislead it. [R: owner's paste] Added `tools/build_briefing.py` and generated `BRIEFING.md` (all key files in one raw link; the check fails if stale), plus a warning that chat uploads are not the source of truth.
+Left: Claude-B answers the knowledge check from `BRIEFING.md`; Claude-A grades it. For write access Claude-B needs a Claude Code session with the repo.
+

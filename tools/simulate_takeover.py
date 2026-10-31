@@ -4,6 +4,7 @@ Claude-A hits a limit -> Claude-B takes over and finishes -> Claude-A resumes.""
 import hashlib, os, re, shutil, sys, tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_repo import check
+from build_briefing import build
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 ok = []
@@ -23,6 +24,10 @@ def wr(p, s):
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, "w", encoding="utf8") as f:
         f.write(s)
+
+
+def refresh(repo):
+    wr(os.path.join(repo, "BRIEFING.md"), build(repo))
 
 
 def sha(p):
@@ -51,6 +56,7 @@ def main():
     n1 = "2026-12-01-01-claude-a.md"
     wr(os.path.join(hd, n1), handoff("Claude-A", base[-1], "report part 1 (TESTWORK/report.md)", "write report part 2 (TEST-0001); Muse owns TEST-0002"))
     shutil.copy(os.path.join(hd, n1), os.path.join(hd, "LATEST.md"))
+    refresh(repo)
     step("1. Claude-A handoff written, structure valid", check(repo) == [], "; ".join(check(repo)))
 
     latest = rd(os.path.join(hd, "LATEST.md"))
@@ -60,12 +66,14 @@ def main():
     step("2b. Claude-B identifies the exact next action", "part 2" in nxt and "TEST-0001" in nxt)
     st = rd(os.path.join(repo, "STATUS.md"))
     wr(os.path.join(repo, "STATUS.md"), re.sub(r"^LOCK:.*$", "LOCK: HELD by Claude-B since test; job TEST-0001", st, flags=re.M))
+    refresh(repo)
     step("2c. Claude-B takes the lock and the structure stays valid", check(repo) == [], "; ".join(check(repo)))
     wr(os.path.join(repo, "TESTWORK/report.md"), rd(os.path.join(repo, "TESTWORK/report.md")) + "part 2 done by Claude-B\n")
     n2 = "2026-12-01-02-claude-b.md"
     wr(os.path.join(hd, n2), handoff("Claude-B", n1, "report part 2 (TESTWORK/report.md)", "Claude-A resumes; Muse applies patch (TEST-0002)"))
     shutil.copy(os.path.join(hd, n2), os.path.join(hd, "LATEST.md"))
     wr(os.path.join(repo, "STATUS.md"), re.sub(r"^LOCK:.*$", "LOCK: FREE", rd(os.path.join(repo, "STATUS.md")), flags=re.M))
+    refresh(repo)
     step("2d. Claude-B handoff valid, links to A's, lock freed", check(repo) == [], "; ".join(check(repo)))
 
     latest = rd(os.path.join(hd, "LATEST.md"))
@@ -77,6 +85,7 @@ def main():
     step("4a. no earlier handoff changed or deleted", all(os.path.exists(os.path.join(hd, n)) and sha(os.path.join(hd, n)) == h for n, h in base_hash.items()))
     step("4b. both new handoffs preserved", os.path.exists(os.path.join(hd, n1)) and os.path.exists(os.path.join(hd, n2)))
     step("4c. Muse's job file unchanged", sha(os.path.join(repo, "JOBS/todo/TEST-0002.md")) == muse_before)
+    step("3d. a chat-only Claude gets the newest state from BRIEFING.md alone", "by Claude-B" in rd(os.path.join(repo, "BRIEFING.md")) and "TEST-0002" in rd(os.path.join(repo, "BRIEFING.md")))
     step("4d. final structure check", check(repo) == [], "; ".join(check(repo)))
     shutil.rmtree(tmp)
     print(f"\n{sum(ok)}/{len(ok)} checks passed")

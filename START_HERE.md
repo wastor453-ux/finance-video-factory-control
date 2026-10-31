@@ -9,6 +9,9 @@ You share no memory with the other Claude. Rebuild it from this repo.
 - Both Claudes must know the same things. `TESTS/KNOWLEDGE_CHECK.md` is how we check that.
 
 ## 0. How to get the files
+**Chat-only Claude (no clone, no folder access, cannot push): open ONE link, `BRIEFING.md`:** `https://raw.githubusercontent.com/wastor453-ux/finance-video-factory-control/main/BRIEFING.md`. It contains this file, the bible, status, decisions, patches, the Muse playbook, the latest handoff, the last 10 log entries and the open jobs. Ignore any old files in your chat uploads (old zips, the ChatGPT starter kit, `transcript-fix.zip`); the briefing wins. A chat-only Claude can read, answer checks and prepare files, but only a Claude Code session with the repo attached can take the lock, commit and push.
+**The driver must run `python3 tools/build_briefing.py` before every commit** (the check fails if `BRIEFING.md` is stale).
+
 Best: a Claude Code session with this repo attached (`git clone https://github.com/wastor453-ux/finance-video-factory-control`), which also lets you push. In plain chat, GitHub folder pages are often blocked: open files by their raw links (`https://raw.githubusercontent.com/wastor453-ux/finance-video-factory-control/main/<path>`), or ask the owner to attach a zip of the repo or paste the files. To write, you need the Claude GitHub app installed for this repo on your account; otherwise hand the owner the changed files and say so in the handoff.
 
 ## 1. Read (about 15 minutes)

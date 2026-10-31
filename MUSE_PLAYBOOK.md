@@ -16,3 +16,6 @@ Muse cannot be reached by Claude. The owner pastes these blocks and brings Muse'
 
 ## E. Sync to GitHub (only when the owner says so)
 > Create a branch, commit only the files in `PATCHES.md`, push the branch, and do not merge to main.
+
+## F. When Muse reports a failure (tests fail, a command errors, a patch breaks something)
+Claude's procedure: (1) get Muse's exact commands, exit codes and error text, no summaries; (2) ask the owner for a fresh zip of Muse's tree (block A); (3) reproduce on a copy of that tree, never on guesses; (4) build a corrected patch (changed files only, manifest, SHA-256) and prove `runs/` and `state/` are byte-identical before and after; (5) give the owner a paste-ready instruction for Muse that stops at the gate. Never: ask Muse to work around an access block, claim a fix that was not run, edit an older handoff, touch `runs/` or `state/` outside `ffx`, or push to main.

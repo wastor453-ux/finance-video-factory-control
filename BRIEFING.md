@@ -164,7 +164,7 @@ LOCK: HELD by Claude-A since 2026-10-31; job: keep repo current, review Muse out
 To take over (only when the owner says the driver stopped), replace the line above with `LOCK: HELD by <Claude-A|Claude-B> since <date>; job <id>; branch <name>`. When you stop, set it to `LOCK: FREE`.
 
 ## Checkpoint (live; the driver updates this after every meaningful step)
-- 2026-10-31 (Claude-A): repo rebuilt for two Claudes; Claude-B read test passed (read side); one-driver rule and `TESTS/KNOWLEDGE_CHECK.md` added. Waiting on the owner for Muse's patch 3 / script output and the voice variant name. Claude-B is idle and must not start work. Claude-B is chat-only: it reads via `BRIEFING.md`; knowledge-check answers pending.
+- 2026-10-31 (Claude-A): repo rebuilt for two Claudes; Claude-B read test passed (read side); one-driver rule and `TESTS/KNOWLEDGE_CHECK.md` added. Waiting on the owner for Muse's patch 3 / script output and the voice variant name. Claude-B is idle and must not start work. Claude-B is chat-only: it reads via `BRIEFING.md`; knowledge check passed 12/12 (read side); write side needs a Claude Code session.
 
 ## Current run: `2026-W44-marktilbury-hriu0irR`
 - Source: Mark Tilbury, "7 Proven Ways to Make Money With AI (No Experience)" (`hriu0irRcpE`).
@@ -253,6 +253,9 @@ Muse cannot be reached by Claude. The owner pastes these blocks and brings Muse'
 ## E. Sync to GitHub (only when the owner says so)
 > Create a branch, commit only the files in `PATCHES.md`, push the branch, and do not merge to main.
 
+## F. When Muse reports a failure (tests fail, a command errors, a patch breaks something)
+Claude's procedure: (1) get Muse's exact commands, exit codes and error text, no summaries; (2) ask the owner for a fresh zip of Muse's tree (block A); (3) reproduce on a copy of that tree, never on guesses; (4) build a corrected patch (changed files only, manifest, SHA-256) and prove `runs/` and `state/` are byte-identical before and after; (5) give the owner a paste-ready instruction for Muse that stops at the gate. Never: ask Muse to work around an access block, claim a fix that was not run, edit an older handoff, touch `runs/` or `state/` outside `ffx`, or push to main.
+
 
 ---
 # [HANDOFFS/LATEST.md]
@@ -305,6 +308,11 @@ Left: Claude-B's knowledge-check answers (owner relays); grade them; Muse output
 ## 2026-10-31-04 | Claude-A | Claude-B knowledge check blocked by access; BRIEFING.md added
 Done: Claude-B (chat-only, no repo tool) opened `KNOWLEDGE_CHECK.md` by raw link but could not read other files, did not answer the 12 questions, and still holds old uploads (`transcript-fix.zip`, the old starter kit) that could mislead it. [R: owner's paste] Added `tools/build_briefing.py` and generated `BRIEFING.md` (all key files in one raw link; the check fails if stale), plus a warning that chat uploads are not the source of truth.
 Left: Claude-B answers the knowledge check from `BRIEFING.md`; Claude-A grades it. For write access Claude-B needs a Claude Code session with the repo.
+
+## 2026-10-31-05 | Claude-A | Claude-B knowledge check graded: 12/12
+Done: Claude-B (chat-only) read `BRIEFING.md` and answered all 12 questions from it with section references; I graded them against the repo and my own knowledge: all 12 correct (roles, driver and lock, takeover steps, checkpoint duty, run/gates/script score, patches, voice decision, transcript route, owner-only approvals, failure procedure, never-commit list, open items). [R: owner's paste]
+Gap found: Q10 (what to do when Muse's tests fail) had no explicit procedure in the repo; Claude-B correctly derived it from the rules. Added block F to `MUSE_PLAYBOOK.md`.
+Limit: this proves Claude-B can read and understand the repo, not that it will behave well when it actually takes over. Next real test: takeover when Claude-A hits its limit, from a Claude Code session.
 
 
 ---

@@ -3,8 +3,10 @@
 Checks: required files, STATUS lock line, LATEST == newest handoff, 'Previous handoff' links resolve, job files have
 Status, LOG.md is append-only-looking (entries in order), no obvious secrets. Exit 1 on any problem."""
 import os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from build_briefing import build
 
-REQUIRED = ["README.md", "START_HERE.md", "PROJECT_BIBLE.md", "STATUS.md", "LOG.md", "DECISIONS.md", "PATCHES.md", "MUSE_PLAYBOOK.md", "CLAUDE.md"]
+REQUIRED = ["README.md", "START_HERE.md", "PROJECT_BIBLE.md", "STATUS.md", "LOG.md", "DECISIONS.md", "PATCHES.md", "MUSE_PLAYBOOK.md", "CLAUDE.md", "BRIEFING.md"]
 SECRET = re.compile(r"AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|github_pat_[0-9A-Za-z_]{20,}|sk-[0-9A-Za-z]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 
 
@@ -50,6 +52,8 @@ def check(root):
         ids = re.findall(r"^## (\d{4}-\d{2}-\d{2})-(\d+) \|", rd(j("LOG.md")), re.M)
         if ids != sorted(ids):
             p.append("LOG.md entries are not in date order (append at the bottom)")
+    if os.path.exists(j("BRIEFING.md")) and rd(j("BRIEFING.md")) != build(root):
+        p.append("BRIEFING.md is stale: run python3 tools/build_briefing.py before committing")
     for dirpath, dirs, files in os.walk(root):
         dirs[:] = [x for x in dirs if x != ".git"]
         for f in files:

@@ -6,7 +6,7 @@ LOCK: HELD by Claude-A since 2026-10-31; job: keep repo current, review Muse out
 To take over (only when the owner says the driver stopped), replace the line above with `LOCK: HELD by <Claude-A|Claude-B> since <date>; job <id>; branch <name>`. When you stop, set it to `LOCK: FREE`.
 
 ## Checkpoint (live; the driver updates this after every meaningful step)
-- 2026-10-31 (Claude-A): repo rebuilt for two Claudes; Claude-B read test passed (read side); one-driver rule and `TESTS/KNOWLEDGE_CHECK.md` added. Waiting on the owner for Muse's patch 3 / script output and the voice variant name. Claude-B is idle and must not start work.
+- 2026-10-31 (Claude-A): repo rebuilt for two Claudes; Claude-B read test passed (read side); one-driver rule and `TESTS/KNOWLEDGE_CHECK.md` added. Waiting on the owner for Muse's patch 3 / script output and the voice variant name. Claude-B is idle and must not start work. Claude-B is chat-only: it reads via `BRIEFING.md`; knowledge-check answers pending.
 
 ## Current run: `2026-W44-marktilbury-hriu0irR`
 - Source: Mark Tilbury, "7 Proven Ways to Make Money With AI (No Experience)" (`hriu0irRcpE`).

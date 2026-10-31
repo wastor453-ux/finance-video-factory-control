@@ -11,6 +11,7 @@ Baseline: Muse's own project zip (88 files, 2026-10-30). Patches are zips of onl
 Combined diff against Muse's baseline [V]: after patches 1+2 = **8 modified + 5 new** (matches Muse's report). After patch 3 = **12 modified + 6 new**.
 - Modified: `bin/ffx.mjs`, `docs/STATUS.md`, `lib/doctor.mjs`, `schemas/transcript.schema.json`, `skills/ffx-transcript/SKILL.md`, `tests/skills_cli.test.mjs`, `tests/tts_py.test.mjs`, `tools/synthesize.py`; patch 3 adds `schemas/script.schema.json`, `skills/ffx-script/SKILL.md`, `skills/ffx-analyze/SKILL.md`, `skills/ffx-fact-check/SKILL.md`.
 - New: `lib/transcript.mjs`, `tests/transcript.test.mjs`, `tests/test_gemini_transcript.py`, `tools/gemini_transcript.py`, `tools/proxy_env.py`; patch 3 adds `lib/script-quality.mjs`.
+- `finance-video-factory-control-starter.zip` is the old multi-agent kit: superseded, do not use.
 - `transcript-fix.zip` was an early draft built on Claude's own copy: superseded, never apply.
 - Tests: 91/91 on a copy of Muse's tree with patches 1 to 3; `runs/` and `state/` checksums unchanged before and after [V]. Muse reported 89/89 after patch 2 [R].
 - Provenance note: the patch 3 gate and skills appeared in Claude-A's working copy without being written in that conversation; reviewed and tested, author unknown.

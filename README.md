@@ -14,4 +14,5 @@ Start with [`START_HERE.md`](START_HERE.md). Public repo: no secrets, no transcr
 | `JOBS/` | Tasks: `todo/`, `doing/`, `done/` |
 | `PATCHES.md` | Patch inventory with checksums |
 | `MUSE_PLAYBOOK.md` | Ready-to-paste instructions for Muse |
+| `BRIEFING.md` | Everything in one file (generated); one link for a chat-only Claude |
 | `tools/` | `check_repo.py`, `simulate_takeover.py` |

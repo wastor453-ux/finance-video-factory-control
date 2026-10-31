@@ -16,3 +16,9 @@ Done: scored the G2 script 29/100 with `ffx script-score` (gate present in Claud
 
 ## 2026-10-31-01 | Claude-A | Repo rebuilt for two Claudes only
 Done: removed the earlier multi-agent structure and rebuilt this repo (see `HANDOFFS/2026-10-31-02-claude-a.md`). Recorded owner decisions D-01 to D-04. Left: Claude-B has not joined; Muse's patch 3 result and the voice variant name are pending. Links: `STATUS.md`.
+
+## 2026-10-31-02 | Claude-A | First live takeover read test (Claude-B)
+Done: the owner gave Claude-B the one-line takeover instruction. Claude-B read `PROJECT_BIBLE.md`, `STATUS.md`, `DECISIONS.md`, `MUSE_PLAYBOOK.md` and summarised the state correctly: G1 approved, G2 not approved, script 29/100, patches 1 and 2 applied and 3 unconfirmed, voice variant open. It could not open folder pages (`HANDOFFS/`, `JOBS/`, `LOG.md`) and cannot push. [R: from the owner's paste]
+Result: read side PASSES; write side not yet tested. Fix: added "How to get the files" to `START_HERE.md`.
+Left: Claude-B needs repo access in a session that can clone and push. Suggested first task for Claude-B: `SKILL-0001` on voice and scene-plan skills (files not touched by patches 1 to 3).
+

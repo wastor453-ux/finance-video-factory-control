@@ -22,3 +22,6 @@ Done: the owner gave Claude-B the one-line takeover instruction. Claude-B read `
 Result: read side PASSES; write side not yet tested. Fix: added "How to get the files" to `START_HERE.md`.
 Left: Claude-B needs repo access in a session that can clone and push. Suggested first task for Claude-B: `SKILL-0001` on voice and scene-plan skills (files not touched by patches 1 to 3).
 
+## 2026-10-31-03 | Claude-A | One-driver rule, checkpoints, knowledge check
+Done: owner clarified the model: one Claude works at a time and keeps the repo updated as it goes; the other resumes from the repo when the owner says the driver hit its limit. Recorded as D-12, rewrote the working model in `START_HERE.md`, set the lock to HELD by Claude-A with a live Checkpoint in `STATUS.md`, added `TESTS/KNOWLEDGE_CHECK.md`. Retracted the earlier suggestion that Claude-B start SKILL-0001 now: Claude-B stays idle.
+Left: Claude-B's knowledge-check answers (owner relays); grade them; Muse output for patch 3 and the script rewrite.

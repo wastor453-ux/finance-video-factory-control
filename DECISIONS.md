@@ -15,3 +15,4 @@ Owner decisions are binding. Claude proposals are marked PROPOSED until the owne
 | D-09 | Topic-selection policy and source-video originality policy | DEFERRED by owner | 2026-10-30 |
 | D-10 | No production render, upload or production-repo merge without the owner's explicit yes | STANDING | from the start |
 | D-11 | Motion-graphics reference workflow (study reference videos, extract design principles, never copy frames) | PLANNED (`VIS-0001`) | 2026-10-30 |
+| D-12 | One driver at a time; the other Claude only reads or answers knowledge checks. The driver updates the repo after every meaningful step (STATUS checkpoint, LOG, commit, push). The owner decides when to switch | APPROVED | 2026-10-31, owner |

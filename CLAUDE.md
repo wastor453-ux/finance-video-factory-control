@@ -1,3 +1,3 @@
 # Claude Code Instructions
 
-Read `CLAUDE_START_HERE.md` first; it lists the reading order (`PROJECT_BIBLE.md`, `HANDOFFS/LATEST.md`, `HISTORY/CLAUDE_LOG.md`, state, jobs, `CONTINUITY.md`). This is a PUBLIC coordination repository; keep all commits suitable for public viewing. Do not modify `FINANCE_VIDEO_FACTORY` unless the owner assigns it. Use separate branches, take the lock in `STATE/ACTIVE_WORKER.md`, provide tests, write a handoff and a log entry before stopping, and respect owner approvals.
+Read `START_HERE.md` first. This is a PUBLIC repo: keep every commit suitable for public viewing. Take the lock in `STATUS.md` before working, work on your own branch, write a handoff and a `LOG.md` entry before stopping, run `python3 tools/check_repo.py`, and respect owner approvals. Do not change the production repo (`FINANCE_VIDEO_FACTORY`) unless the owner assigns it.

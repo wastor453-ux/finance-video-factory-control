@@ -2,6 +2,9 @@
 
 You share no memory with the other Claude. Rebuild it from this repo.
 
+## 0. How to get the files
+Best: a Claude Code session with this repo attached (`git clone https://github.com/wastor453-ux/finance-video-factory-control`), which also lets you push. In plain chat, GitHub folder pages are often blocked: open files by their raw links (`https://raw.githubusercontent.com/wastor453-ux/finance-video-factory-control/main/<path>`), or ask the owner to attach a zip of the repo or paste the files. To write, you need the Claude GitHub app installed for this repo on your account; otherwise hand the owner the changed files and say so in the handoff.
+
 ## 1. Read (about 15 minutes)
 1. `PROJECT_BIBLE.md`: goal, owner rules, pipeline, done, pending, lessons, how to work.
 2. `HANDOFFS/LATEST.md`, then the "Previous handoff" links back as far as needed.
